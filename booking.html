@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Book an Appointment · Makeover by Reet</title>
+<meta name="description" content="Book your appointment at Makeover by Reet in a few gentle steps.">
+<meta name="theme-color" content="#FDEBE4">
+<link rel="icon" href="assets/img/logo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,700;1,500;1,600&family=Nunito:wght@500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="petals" aria-hidden="true"></div>
+
+<!-- ============ TOP BAR (logo in the centre) ============ -->
+<header class="nav" id="nav">
+  <nav class="nav__inner" aria-label="Main">
+    <ul class="nav__side nav__left">
+      <li><a href="index.html#home" data-spy="home">Home</a></li>
+      <li><a href="index.html#about" data-spy="about">About</a></li>
+      <li><a href="services.html">Services</a></li>
+    </ul>
+    <a class="nav__quick nav__q-l" data-tel aria-label="Call us"><svg class="i" viewBox="0 0 24 24"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg></a>
+
+    <!-- LOGO: replace assets/img/logo.svg with your own logo -->
+    <a class="nav__logo" href="index.html" aria-label="Makeover by Reet – home"><img src="assets/img/logo.svg" alt="Makeover by Reet logo"></a>
+
+    <ul class="nav__side nav__right">
+      <li><a href="index.html#gallery" data-spy="gallery">Gallery</a></li>
+      <li><a href="index.html#testimonials" data-spy="testimonials">Testimonials</a></li>
+      <li><a href="index.html#visit" data-spy="visit">Visit</a></li>
+      <li><a class="btn btn--sm" href="booking.html">Book Now</a></li>
+    </ul>
+    <a class="nav__quick nav__q-r" data-ig target="_blank" rel="noopener" aria-label="Instagram"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/></svg></a>
+  </nav>
+</header>
+
+<!-- ============ BOTTOM TAB BAR (phones) ============ -->
+<nav class="tabbar" aria-label="Quick menu">
+  <a href="index.html#home" data-tab="home"><svg class="i" viewBox="0 0 24 24"><path d="M3 10.5 12 3l9 7.5V21H3z"/><path d="M9 21v-7h6v7"/></svg><span>Home</span></a>
+  <a href="services.html" data-tab="services"><svg class="i" viewBox="0 0 24 24"><path d="M12 3v4M12 17v4M3 12h4M17 12h4M6 6l2.5 2.5M15.5 15.5 18 18M18 6l-2.5 2.5M8.5 15.5 6 18"/></svg><span>Services</span></a>
+  <a class="tab-book" href="booking.html" data-tab="book"><b><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="3"/><path d="M8 3v4M16 3v4M3 10h18"/></svg></b><span>Book</span></a>
+  <a href="index.html#gallery" data-tab="gallery"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3"/><circle cx="9" cy="10" r="1.6"/><path d="m21 16-5-5-9 9"/></svg><span>Gallery</span></a>
+  <a href="index.html#visit" data-tab="visit"><svg class="i" viewBox="0 0 24 24"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11z"/><circle cx="12" cy="10" r="2.5"/></svg><span>Visit</span></a>
+</nav>
+
+<main>
+<section class="book-hero"><div class="blob b"></div><div class="blob c"></div><span class="blob b1"></span><span class="blob b2"></span>
+  <span class="s">Makeover by Reet</span><h1>Book your look</h1>
+  <p>Pick a service, choose a day, and we will confirm your appointment by call or WhatsApp.</p>
+</section>
+<div class="book-card">
+  <div class="prog" id="prog"><i>1</i><u></u><i>2</i><u></u><i>3</i></div>
+
+  <section class="step on" data-s="0"><h2>Choose your services</h2><p>Tap to select one or more. Prices are starting prices.</p><div class="cats" id="cats"></div><div class="tiles" id="tiles"></div><div class="picked" id="picked"></div></section>
+  <section class="step" data-s="1"><h2>Pick a day and time</h2><p>Choose your preferred slot. We will confirm availability.</p><div class="dates" id="dates"></div><label>Preferred time</label><div class="tm" id="tm"></div></section>
+  <section class="step" data-s="2"><h2>Your details</h2><p>Almost done. Check the summary, then send it on WhatsApp.</p>
+    <label for="nm">Full name</label><input id="nm" maxlength="70" autocomplete="name" placeholder="Your name">
+    <label for="ph">Mobile number</label><input id="ph" inputmode="numeric" maxlength="14" autocomplete="tel" placeholder="10-digit number">
+    <label for="br">Branch</label><select id="br"></select>
+    <label for="nt">Notes (optional)</label><textarea id="nt" maxlength="300" placeholder="Event date, venue, skin or hair concerns…"></textarea>
+    <div class="sum" id="sum"></div></section>
+
+  <div class="err" id="err" role="alert"></div>
+  <div class="row" id="nav2"><button class="btn btn--ghost" id="bk" type="button">Back</button><button class="btn" id="nx" type="button">Next</button></div>
+
+  <section class="ok" id="ok"><div class="chk"><svg viewBox="0 0 52 52"><path d="M12 27l10 10 18-20"/></svg></div><h2>One last tap!</h2><p style="margin:8px 0 18px" id="okm"></p>
+    <div class="row" style="justify-content:center;flex-wrap:wrap"><a class="btn" id="wa" target="_blank" rel="noopener">Open WhatsApp again</a><a class="btn btn--ghost" href="index.html">Back to home</a></div></section>
+</div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer">
+  <div class="wrap">
+    <div class="foot">
+      <div class="brand"><img src="assets/img/logo.svg" alt="Makeover by Reet"><b>Makeover by Reet</b><p>Calm, beautiful, you.</p></div>
+      <div class="dev">
+  <h4>Meet the dev</h4>
+  <p>Website built by <b>Kaif (Sid)</b>.</p>
+  <div class="contact-links">
+    <a href="https://github.com/kaifxcode" target="_blank" rel="noopener">
+      <svg class="i" viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-6-2m12 4v-3.5c0-1 .1-1.4-.5-2 2.800-.3 5.500-1.400 5.500-6a4.600 4.600 0 0 0-1.300-3.200 4.200 4.200 0 0 0-.1-3.200s-1.100-.3-3.500 1.300a12 12 0 0 0-6.200 0C6.500 2.800 5.400 3.100 5.400 3.100a4.200 4.200 0 0 0-.1 3.200A4.600 4.600 0 0 0 4 9.500c0 4.600 2.700 5.700 5.500 6-.6.600-.6 1.200-.5 2V21"/></svg>
+      GitHub
+    </a>
+    <a href="https://www.instagram.com/kaif.mansuri.18/" target="_blank" rel="noopener">
+      <svg class="i" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/></svg>
+      @kaif.mansuri.18
+    </a>
+    
+  </div>
+</div>
+      <div><h4>Explore</h4><ul><li><a href="index.html#about">About</a></li><li><a href="services.html">Services</a></li><li><a href="index.html#gallery">Gallery</a></li><li><a href="booking.html">Book Now</a></li></ul></div>
+      <div><h4>Hours</h4><ul id="footHours"></ul></div>
+      <div><h4>Say hello</h4><div class="contact-links">
+        <a data-ig target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".8"/></svg><span data-ig-handle>@makeoverbyreet</span></a>
+        <a data-mail><svg class="i" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="3"/><path d="m4 7 8 6 8-6"/></svg><span data-mail-text>email us</span></a>
+        <a data-wa target="_blank" rel="noopener"><svg class="i" viewBox="0 0 24 24"><path d="M4 20l1.3-4A8 8 0 1 1 8 18.7z"/></svg>WhatsApp us</a>
+      </div></div>
+    </div>
+    <div class="copy"><span>© <span id="yr"></span> Makeover by Reet. All rights reserved.</span><span>Kannauj · Fatehgarh</span></div>
+  </div>
+</footer>
+
+<script src="js/data.js"></script>
+<script src="js/main.js"></script>
+<script src="js/booking.js"></script>
+</body>
+</html>
